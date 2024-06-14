@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+    <h1 class=>List of Existing Users</h1>
+    {% for post in posts %}
+        <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+            <small class="text-muted"> Hashed Password: {{ post.password }}</small>
+            </div>
+            <h2>Username: <a class="article-title" href="{{url_for('login')}}">{{ post.username }}</a></h2>
+            <p class="article-content">Email: {{ post.email }}</p>
+        </div>
+        </article>
+    {% endfor %}
+    </div>
+{% endblock content %}
